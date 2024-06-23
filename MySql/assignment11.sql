@@ -112,7 +112,7 @@ join productmaster pm on p.product_id=pm.product_id
 group by name 
 having sum(p.quantity)>200
 
-- Example assuming the default naming
+-- Example assuming the default naming
 -- ALTER TABLE Sale DROP FOREIGN KEY Sale_ibfk_1;
 -- ALTER TABLE Sale DROP FOREIGN KEY Sale_ibfk_2;
 

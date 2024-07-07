@@ -1,0 +1,81 @@
+<!doctype html>
+
+<html>
+
+	<head>
+		<title>Table Tutorial</title>
+		<meta charset="utf-8">
+	</head>
+
+
+<body>
+
+<form name="emplyment action=send.php" method="post">
+ <table width="600" border="1" cellspacing="2" cellpadding="2">
+    <tr>
+      <td>Employment Application</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Full Name</td>
+      <td><input type="text" name="fname" maxlength="50" /></td>
+    </tr>
+    <tr>
+      <td>Last Name</td>
+      <td><input type="text" name="fname" maxlength="50" /></td>
+    </tr>
+    <tr>
+      <td>Position</td>
+      <td>
+        <Select name="Position">
+            <Option value="AC">Accountant </Option>
+            <Option value="RS">Resceptionist </Option>
+            <Option value="AD">Administrator </Option>
+            <Option value="SV">Supervisor </Option>
+        </Select>
+         
+      </td>
+    </tr>
+    <tr>
+      <td>Experience level</td>
+      <td>
+        <Select name="Experiencee">
+            <Option value="El">Entry level </Option>
+            <Option value="SE">Some Experience </Option>
+            <Option value="VE">very Experience </Option>
+        </Select>
+
+      </td>
+    </tr>
+    <tr>
+      <td>Job Type</td>
+      <td>
+        <input type="checkbox" name="ft"/>Full-time
+        <input type="checkbox" name="pt"/>Part-time
+        <input type="checkbox" name="ct"/>Contract
+      
+    
+      </td>
+    </tr>
+    <tr>
+      <td>Employment status</td>
+      <td>
+        <input type="radio" name="estatus" value="employed" />Employed
+        <input type="radio" name="estatus" value="employed" />Unemployed
+        <input type="radio" name="estatus" value="student" />Student
+      </td>
+    </tr>
+    <tr>
+      <td>Additional Comments</td>
+      <td><textarea name="comments" cols="45" rows="5"></textarea></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><input type="submit" value="Submit" />
+          <input type="reset" value="Reset" />
+        
+      
+      </td>
+    </tr>
+  </table>
+</form>

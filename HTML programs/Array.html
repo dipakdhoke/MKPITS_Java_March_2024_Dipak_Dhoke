@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=S, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         //  javascript array literal
+           
+         var students=["abc","xcv","uio"];
+            for(var i=0;i<students.length;i++){
+                console.log(students[i]);
+                document.write(students[i]+"<br>");
+            }
+
+            // Javascript array directly(new keyword)
+       
+            var cities =new Array();
+            cities[0]="Nagpur";
+            cities[1]="Pune";
+            cities[2]="Mumbai";
+            for (var i=0;i<cities.length;i++){
+                console.log(cities[i]);
+                document.write(cities[i]+"<br>")
+            }
+
+            //java script array constructors
+            var fruits= new Array("Apple","Banana","Mango","orange","pinapple","lemon");
+            console.log(fruits);
+            document.write(fruits);
+            
+            
+            //operration /methods of array
+            var it=fruits.entries();
+            for(var f of it){
+                console.log(f);
+                document.write(f+"<br>");
+            }
+            var flower = new Array("jasmine",l="Lotus","Rose");
+            var concatarray=fruits.concat(flower);
+            document.write(concatarray)
+            
+            
+            var arr=["AngularJS","Node.js","JQuery","Bootstrap"]  
+// place at 0th position, the element between 1st and 2nd position.  
+            var result=arr.copyWithin(0,1,4);  
+            document.writeln(result); 
+            document.write("<br>")
+            var arra1=Array.from("this is the example of array");
+            document.write(arra1);
+
+            
+    </script>
+</body>
+</html>

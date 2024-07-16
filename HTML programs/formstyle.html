@@ -1,0 +1,146 @@
+<html>
+<head>
+    <title>Student Registration Form</title>
+    <style>
+        
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        div {
+            background: linear-gradient(rgb(175, 235, 251), rgb(197, 250, 196), rgb(255, 250, 211));
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2, p {
+            font-weight: bold;
+            text-align: center;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        input[type="password"],
+        
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 10px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        input[type="radio"] {
+            margin: 0 10px 0 0;
+        }
+        
+        input[type="submit"] {
+            font-weight: bolder;
+            font-size: 20px;
+            width: 100%;
+            background-color: #00b106;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        
+        input{
+            background-color: aliceblue;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="formContainer">
+        <form id="registrationForm" onsubmit="return validateForm()">
+            <h2>Student Registration Form</h2>
+            <p>Fill in this form to register</p>
+            <label for="first_name">First Name</label>
+            <input type="text" id="first_name" name="first_name" placeholder="Enter your first name" required>
+            <label for="last_name">Last Name</label>
+            <input type="text" id="last_name" name="last_name" placeholder="Enter your last name" required>
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="Enter your e-mail" required>
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" name="dob" required>
+            <label for="username">Set Username</label>
+            <input type="text" id="username" name="username" placeholder="Set Username" required>
+            <label for="password">Set Password</label>
+            <input type="password" id="password" name="password" placeholder="Set password" required>
+            <label>Gender</label><br>
+            <input type="radio" id="male" name="gender" value="Male">
+            <label for="male">Male</label><br>
+            <input type="radio" id="female" name="gender" value="Female">
+            <label for="female">Female</label><br>
+            <label for="course">Course</label>
+            <select id="course" name="course" required>
+                <option value="Java">Java</option>
+                <option value="CS">Computer Fundamentals</option>
+                <option value="AI">Artificial Intelligence</option>
+                <option value="ML">Machine Learning</option>
+                <option value="OOPS">Object Oriented Programming</option>
+                <option value="DBMS">Database Management System</option>
+            </select>
+            <input type="submit" value="Register"/>
+        </form>
+    </div>
+    <script>
+        function validateForm() {
+            var firstName = document.forms["registrationForm"]["first_name"].value;
+            var password = document.forms["registrationForm"]["password"].value;
+
+            if (/\d/.test(firstName)) {
+                alert("First name should not contain numbers");
+                return false;
+            }
+
+            if (password.length <= 8) {
+                alert("Password must be greater than 8 characters");
+                return false;
+            }
+
+            showDetails();
+            return false;
+        }
+
+        function showDetails() {
+            var form = document.forms["registrationForm"];
+            var details = `
+                <div>
+                    <h2>Entered Details</h2>
+                    <p><b>First Name:</b> ${form["first_name"].value}</p>
+                    <p><b>Last Name:</b> ${form["last_name"].value}</p>
+                    <p><b>E-mail:</b> ${form["email"].value}</p>
+                    <p><b>Date of Birth:</b> ${form["dob"].value}</p>
+                    <p><b>Username:</b> ${form["username"].value}</p>
+                    <p><b>Gender:</b> ${form["gender"].value}</p>
+                    <p><b>Course:</b> ${form["course"].value}</p>
+                </div>
+            `;
+            document.getElementById("formContainer").innerHTML = details;
+        }
+    </script>
+</body>
+</html>

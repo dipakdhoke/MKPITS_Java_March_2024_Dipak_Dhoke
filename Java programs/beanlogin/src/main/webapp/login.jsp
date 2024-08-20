@@ -1,0 +1,34 @@
+<%@ page contentType="text/html" pageEncoding="UTF-8" %>
+<%@ page import="beanlogin.beanclass" %>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Login Page</title>
+</head>
+<body>
+    <h1>Login</h1>
+    <form action="login.jsp" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+        <input type="submit" value="Login">
+    </form>
+
+    <%
+        if (request.getParameter("name") != null && request.getParameter("password") != null) {
+            String name = request.getParameter("name");
+            String password = request.getParameter("password");
+
+            beanclass user = new beanclass();
+            if (user.authenticate(name, password)) {
+                session.setAttribute("user", name);
+                response.sendRedirect("index.jsp");
+            } else {
+                out.println("<p>Invalid username or password</p>");
+            }
+        }
+    %>
+</body>
+</html>

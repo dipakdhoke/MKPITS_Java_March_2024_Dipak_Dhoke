@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome</title>
+</head>
+<body>
+    <h1>Welcome, <span id="username"></span>!</h1>
+    <p><a href="logout">Logout</a></p>
+    <script>
+        document.getElementById('username').innerText = sessionStorage.getItem('username');
+        if (!sessionStorage.getItem('username')) {
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+</html>

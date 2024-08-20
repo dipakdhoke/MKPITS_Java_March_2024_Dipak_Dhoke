@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <bean id="s1" class="constructorargs.Student">
+    <constructor-arg value="Dipak"></constructor-arg>
+ 
+    </bean>
+   
+   
+    <bean id="s2" class="constructorargs.Student">
+    <constructor-arg value="jagat"></constructor-arg>
+    <constructor-arg value="kalmeshwar"></constructor-arg>
+    </bean>
+   
+ 
+   
+    
+    <bean id="a1" class="constructorargs.Address">
+    <constructor-arg value="Nagpur"></constructor-arg>
+    <constructor-arg value="MH"></constructor-arg>
+    <constructor-arg value="IND"></constructor-arg>
+    
+    </bean>
+    
+     <bean id="s3" class="constructorargs.Student">
+    <constructor-arg value="Dipak"></constructor-arg>
+     <constructor-arg  value="Banglore"></constructor-arg>
+     <constructor-arg> 
+      <ref bean="a1" /> 
+      </constructor-arg> 
+    </bean>
+    
+     <bean id="s4" class="constructorargs.Student">
+    <constructor-arg value="Dipak"></constructor-arg>
+     <constructor-arg  value="Banglore"></constructor-arg>
+     <constructor-arg> 
+      <ref bean="a1" /> 
+      </constructor-arg>
+      <constructor-arg>
+      <list>
+      <value>Math</value>
+      <value>chemistry</value>
+      <value>Physics</value>
+      </list>
+      </constructor-arg> 
+    </bean>
+    
+    <bean id="s5" class="constructorargs.Student">
+    <constructor-arg value="Dipak"></constructor-arg>
+     <constructor-arg  value="Banglore"></constructor-arg>
+     <constructor-arg> 
+      <ref bean="a1" /> 
+      </constructor-arg>
+      <constructor-arg>
+      <list>
+      <value>Math</value>
+      <value>chemistry</value>
+      <value>Physics</value>
+      </list>
+      </constructor-arg>
+      <constructor-arg><map>
+      <entry key="ssc" value="83%">    </entry>
+      <entry key="hsc" value="63%">    </entry>
+      <entry key="B.E" value="69%">    </entry>
+      </map></constructor-arg> 
+    </bean>
+   
+    <bean id="ad" class="constructorargs.Student">
+    <property name="city" value="Nagpur"></property>
+    <property name="state" value="MH"></property>
+    <property name="country" value="IND"></property>
+    </bean> 
+    
+    <bean id="s6" class="constructorargs.Student">
+    <property name="name"><value>Dipak</value></property>
+    <property name="city"><value>Nagpur</value></property>
+     <property name="ad" ref="ad"></property> 
+    </bean>
+    
+</beans>
